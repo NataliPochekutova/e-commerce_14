@@ -18,11 +18,12 @@ pip install -r requirements.txt
 Для проекта реализованы тесты на pytest. Запустить можно командой `pytest .`
 Покрытие:
 ```
-src\category.py             13      0   100%
-src\product.py              10      0   100%
-tests\conftest.py           12      2    83%   
-tests\test_category.py       6      0   100%
+src\category.py             25      1    96%   
+src\product.py              34      0   100%
+tests\conftest.py           18      1    94%   
+tests\test_category.py      18      0   100%
+tests\test_product.py       45      0   100%
 ------------------------------------------------------
-TOTAL                       41      2    95%
+TOTAL                      140      2    99%
 
 ```
