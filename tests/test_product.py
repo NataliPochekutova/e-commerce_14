@@ -20,6 +20,12 @@ def test_new_product_1(product_dict_1):
     assert product.price == 180000.0
     assert product.quantity == 7
 
+def test_product_str(product_1):
+    assert str(product_1) == 'Samsung Galaxy S23 Ultra, 180000.0 руб. Остаток: 5 шт.'
+
+def test_product_add(product_1, product_2):
+    assert product_1 + product_2 == 1260000.0
+
 def test_new_product_2(product_dict_2):
     existing_products = [
         Product(name="Samsung Galaxy S23 Ultra",

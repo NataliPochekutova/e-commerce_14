@@ -13,17 +13,19 @@ pip install -r requirements.txt
 - Модуль product.py. В нем реализован класс, содержащий информацию о товарах
 - Модуль category.py. В нем реализован класс, содержащий информацию об сатегориях товаров 
 и списпи товаров из модуля product.py
+- Модуль product_iterator.py. Класс, который производит итерацию по товарам
 
 ## Тестирование
 Для проекта реализованы тесты на pytest. Запустить можно командой `pytest .`
 Покрытие:
 ```
-src\category.py             25      1    96%   
-src\product.py              34      0   100%
-tests\conftest.py           18      1    94%   
-tests\test_category.py      18      0   100%
-tests\test_product.py       45      0   100%
-------------------------------------------------------
-TOTAL                      140      2    99%
+src\category.py              30      0   100%
+src\product.py               38      0   100%
+src\product_iterator.py      14      0   100%
+tests\conftest.py            22      0   100%
+tests\test_category.py       28      0   100%
+tests\test_product.py        49      0   100%
+-------------------------------------------------------
+TOTAL                       181      0   100%
 
 ```
