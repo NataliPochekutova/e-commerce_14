@@ -26,6 +26,19 @@ def test_product_str(product_1):
 def test_product_add(product_1, product_2):
     assert product_1 + product_2 == 1260000.0
 
+
+def test_product_smartphone_add(product_smartphone_1, product_smartphone_2):
+    assert product_smartphone_1 + product_smartphone_2 == 2580000.0
+
+
+def test_product_lawn_grass_add(product_lawn_grass_1, product_lawn_grass_2):
+    assert product_lawn_grass_1 + product_lawn_grass_2 == 16750.0
+
+
+def test_product_smartphone_add_error(product_smartphone_1):
+    with pytest.raises(TypeError):
+        result = product_smartphone_1 + 4
+
 def test_new_product_2(product_dict_2):
     existing_products = [
         Product(name="Samsung Galaxy S23 Ultra",
