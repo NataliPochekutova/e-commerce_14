@@ -1,7 +1,8 @@
+from src.base_order import Abstract
 from src.product import Product
 
 
-class Category:
+class Category(Abstract):
     name: str
     description: str
     products: list
