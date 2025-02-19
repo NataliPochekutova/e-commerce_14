@@ -21,27 +21,28 @@ pip install -r requirements.txt
 - Модуль  print_mixin.py содержит класс-миксин, который печатает в консоль информацию о том, 
 от какого класса и с какими параметрами был создан объект.
 - Модули base_product.py и base_order.py содержат базовые абстрактные классы для Product и Category(Order)
+- Модуль exceptions.py содержит класс исключения, который отвечает за обработку событий, 
+когда в «Категорию» или «Заказ» добавляется товар с нулевым количеством.
 
 ## Тестирование
 Для проекта реализованы тесты на pytest. Запустить можно командой `pytest .`
 Покрытие:
 ```
-src\base_order.py                5      1    80%   
-src\base_product.py              6      1    83%   
-src\category.py                 33      0   100%
+src\category.py                 46      3    93%     
 src\new_products.py             14      0   100%
 src\order.py                     9      0   100%
 src\print_mixin.py               5      0   100%
-src\product.py                  43      0   100%
+src\product.py                  45      0   100%
 src\product_iterator.py         14      0   100%
-tests\conftest.py               41      0   100%
-tests\test_category.py          31      0   100%
+tests\conftest.py               44      0   100%
+tests\test_category.py          47      3    94%  
 tests\test_new_products.py      17      0   100%
 tests\test_order.py              5      0   100%
 tests\test_print_mixin.py       12      0   100%
 tests\test_product.py           56      0   100%
 ----------------------------------------------------------
-TOTAL                          291      2    99%
+TOTAL                          328      9    97%
+
 
 
 

@@ -1,5 +1,6 @@
 from src.category import Category
 from src.product import Product
+from src.exceptions import ZeroProduct
 import pytest
 
 
@@ -27,7 +28,31 @@ def test_add_product_smartphone(all_products, product_smartphone_1):
     assert Category.product_count == 2
 
 
+def test_add_product_zero(capsys, all_products):
+
+    with pytest.raises(ValueError):
+        product_add = Product(
+            name="Samsung Galaxy S23 Ultra", description="256GB, Серый цвет, 200MP камера", price=23100, quantity=0
+        )
+        all_products.add_product = product_add
+        message = capsys.readouterr()
+
+        assert message.out.strip().split("\n")[-1] == "Товар с нулевым количеством не может быть добавлен"
+
+
+def test_add_product_success(capsys, all_products):
+
+    product_add = Product(
+        name="Samsung Galaxy S23 Ultra", description="256GB, Серый цвет, 200MP камера", price=23100, quantity=1
+    )
+    all_products.add_product(product_add)
+    message = capsys.readouterr()
+    assert message.out.strip().split("\n")[-2] == "Товар успешно добавлен"
+    assert message.out.strip().split("\n")[-1] == "Обработка добавления товара завершена"
+
+
 def test_add_product_error():
+
     product4 = Product("QLED", "Фоновая подсветка", 12, 7)
     category = Category("Смартфоны", "Смартфоны, как средство", [product4])
     with pytest.raises(TypeError):
@@ -42,3 +67,8 @@ def test_product_iterator(product_iterator):
 
     with pytest.raises(StopIteration):
         next(product_iterator)
+
+
+def test_middle_price(category_1, category_without_products):
+    assert category_1.middle_price() == 195000.0
+    assert category_without_products.middle_price() == 0

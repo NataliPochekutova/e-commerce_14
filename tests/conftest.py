@@ -59,6 +59,12 @@ def category_1():
                                     quantity=8)
                          ])
 
+@pytest.fixture
+def category_without_products():
+    return Category(name="Смартфоны",
+                    description="Смартфоны, как средство не только коммуникации, но и получения доп. функций",
+                    products=[])
+
 
 @pytest.fixture
 def all_products():
